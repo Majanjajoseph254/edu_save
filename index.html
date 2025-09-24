@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EduSave - Student Resilience Platform</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <meta name="description" content="EduSave helps African university students save on textbooks, find scholarships and gigs, and build supportive communities.">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>📘</text></svg>">
+    <meta property="og:title" content="EduSave - Student Resilience Platform">
+    <meta property="og:description" content="Save money, access scholarships, find gigs, and connect with peers.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://example.com/">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-4.0.3">
+    <meta name="theme-color" content="#3498db">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <span>EduSave</span>
+            </a>
+            
+            <button class="nav-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            <button class="theme-toggle" aria-label="Toggle dark mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            
+            <nav class="nav">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#marketplace" class="nav-link">Marketplace</a>
+                <a href="#scholarships" class="nav-link">Scholarships</a>
+                <a href="#gig-board" class="nav-link">Gig Board</a>
+                <a href="#community" class="nav-link">Community</a>
+                <a href="#communities" class="nav-link">Communities</a>
+            </nav>
+            
+            <div class="uni-select">
+                <label for="universitySelect" class="sr-only">Select University</label>
+                <select id="universitySelect" aria-label="Select your university">
+                    <option value="All Kenya">All Kenya</option>
+                    <option value="University of Nairobi">University of Nairobi</option>
+                    <option value="Kenyatta University">Kenyatta University</option>
+                    <option value="Strathmore University">Strathmore University</option>
+                    <option value="JKUAT">JKUAT</option>
+                    <option value="Moi University">Moi University</option>
+                    <option value="Egerton University">Egerton University</option>
+                    <option value="Technical University of Kenya">Technical University of Kenya</option>
+                    <option value="Maseno University">Maseno University</option>
+                </select>
+            </div>
+
+            <div class="auth-buttons">
+                <button class="btn btn-outline">Login</button>
+                <button class="btn btn-solid">Sign Up</button>
+            </div>
+            <div class="auth-user" style="display:none">
+                <span class="auth-greeting"></span>
+                <button class="btn btn-outline btn-logout">Logout</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <h1 class="hero-title">Connecting University Students Across Kenya</h1>
+            <p class="hero-subtitle">Save on textbooks, access Kenyan scholarships, find gigs, and join your campus community—built for students in Kenya.</p>
+            
+            <div class="search-bar">
+                <input type="text" class="search-input" placeholder="Search for textbooks, scholarships, opportunities...">
+                <button class="search-btn">Search</button>
+            </div>
+            <p class="search-results" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <h2 class="section-title">How EduSave Helps Students in Kenya</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-book"></i>
+                    </div>
+                    <h3 class="feature-title">Affordable Textbooks</h3>
+                    <p class="feature-description">Buy, sell, or rent textbooks at student-friendly prices from peers at your university.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="feature-title">Scholarship Access</h3>
+                    <p class="feature-description">Find verified scholarships and bursaries tailored to African students.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3 class="feature-title">Skill Marketplace</h3>
+                    <p class="feature-description">Offer your skills or find talent for projects within the student community.</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="feature-title">Student Community</h3>
+                    <p class="feature-description">Connect with peers, share resources, and support each other's academic journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Preview -->
+    <section id="marketplace" class="marketplace-preview">
+        <div class="container">
+            <h2 class="section-title">Featured Textbooks</h2>
+            
+            <div class="items-grid">
+                <div class="item-card" data-university="University of Nairobi">
+                    <img src="https://images.unsplash.com/photo-1544947950-fa07a98d237f?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Calculus Textbook" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Introduction to Calculus</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-university"></i> University of Nairobi</span>
+                            <span><i class="fas fa-star"></i> Like New</span>
+                        </div>
+                        <p class="card-price">KSh 5,000</p>
+                        <button class="btn btn-solid">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="item-card" data-university="Kenyatta University">
+                    <img src="https://images.unsplash.com/photo-1532012197267-da84d127e765?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Physics Textbook" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">University Physics</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-university"></i> Kenyatta University</span>
+                            <span><i class="fas fa-star"></i> Good</span>
+                        </div>
+                        <p class="card-price">KSh 4,200</p>
+                        <button class="btn btn-solid">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="item-card" data-university="Strathmore University">
+                    <img src="https://images.unsplash.com/photo-1553729459-efe14ef6055d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Economics Textbook" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Principles of Economics</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-university"></i> Strathmore University</span>
+                            <span><i class="fas fa-star"></i> New</span>
+                        </div>
+                        <p class="card-price">KSh 6,500</p>
+                        <button class="btn btn-solid">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="item-card" data-university="JKUAT">
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Data Structures Textbook" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Data Structures in C++</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-university"></i> JKUAT</span>
+                            <span><i class="fas fa-star"></i> Fair</span>
+                        </div>
+                        <p class="card-price">KSh 3,800</p>
+                        <button class="btn btn-solid">View Details</button>
+                    </div>
+                </div>
+                
+                <div class="item-card" data-university="Moi University">
+                    <img src="https://images.unsplash.com/photo-1529101091764-c3526daf38fe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Anatomy Textbook" class="card-image">
+                    <div class="card-content">
+                        <h3 class="card-title">Human Anatomy Essentials</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-university"></i> Moi University</span>
+                            <span><i class="fas fa-star"></i> Like New</span>
+                        </div>
+                        <p class="card-price">KSh 7,200</p>
+                        <button class="btn btn-solid">View Details</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="see-more">
+                <button class="btn btn-outline">Browse Marketplace</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Scholarships Section -->
+    <section id="scholarships" class="section scholarships">
+        <div class="container">
+            <h2 class="section-title">Available Scholarships</h2>
+            <div class="items-grid">
+                <div class="item-card" data-university="All Kenya">
+                    <div class="card-content">
+                        <h3 class="card-title">University Merit Scholarship</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-university"></i> All Kenyan Universities</span>
+                            <span><i class="fas fa-calendar"></i> Deadline: Oct 2025</span>
+                        </div>
+                        <p class="card-price">KSh 500,000</p>
+                        <button class="btn btn-solid">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="item-card" data-university="All Kenya">
+                    <div class="card-content">
+                        <h3 class="card-title">Tech Innovation Grant</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-laptop-code"></i> STEM Fields (Kenya)</span>
+                            <span><i class="fas fa-calendar"></i> Deadline: Nov 2025</span>
+                        </div>
+                        <p class="card-price">KSh 750,000</p>
+                        <button class="btn btn-solid">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gig Board Section -->
+    <section id="gig-board" class="section gig-board">
+        <div class="container">
+            <h2 class="section-title">Available Gigs</h2>
+            <div class="items-grid">
+                <div class="item-card" data-university="Remote Kenya">
+                    <div class="card-content">
+                        <h3 class="card-title">Website Development</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> Part-time</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Remote (Kenya)</span>
+                        </div>
+                        <p class="card-price">KSh 50,000</p>
+                        <button class="btn btn-solid">Apply Now</button>
+                    </div>
+                </div>
+                
+                <div class="item-card" data-university="Remote Kenya">
+                    <div class="card-content">
+                        <h3 class="card-title">Content Writing</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> Flexible</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Remote (Kenya)</span>
+                        </div>
+                        <p class="card-price">KSh 30,000</p>
+                        <button class="btn btn-solid">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-university="University of Nairobi">
+                    <div class="card-content">
+                        <h3 class="card-title">Tutoring: Calculus I</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> Evenings</span>
+                            <span><i class="fas fa-map-marker-alt"></i> University of Nairobi</span>
+                        </div>
+                        <p class="card-price">KSh 15,000</p>
+                        <button class="btn btn-solid">Apply Now</button>
+                    </div>
+                </div>
+
+                <div class="item-card" data-university="Kenyatta University">
+                    <div class="card-content">
+                        <h3 class="card-title">Lab Assistant (Chemistry)</h3>
+                        <div class="card-details">
+                            <span><i class="fas fa-clock"></i> Part-time</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Kenyatta University</span>
+                        </div>
+                        <p class="card-price">KSh 20,000</p>
+                        <button class="btn btn-solid">Apply Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Community Section -->
+    <section id="community" class="section community">
+        <div class="container">
+            <h2 class="section-title">Join Your University Community</h2>
+            <div class="items-grid">
+                <div class="item-card">
+                    <div class="card-content">
+                        <h3 class="card-title">Study Groups</h3>
+                        <p>Connect with fellow students at your selected university in Kenya.</p>
+                        <button class="btn btn-solid join-community">Join Now</button>
+                    </div>
+                </div>
+                
+                <div class="item-card">
+                    <div class="card-content">
+                        <h3 class="card-title">Mentorship</h3>
+                        <p>Get guidance from Kenyan professionals and alumni.</p>
+                        <button class="btn btn-solid">Find Mentor</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="statistics">
+        <div class="container">
+            <h2 class="section-title">EduSave by Numbers</h2>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Active Students</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">KSh 25M+</div>
+                    <div class="stat-label">Saved on Textbooks</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Scholarships Listed</div>
+                </div>
+                
+                <div class="stat-item">
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">African Countries</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Students Say</h2>
+            
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"EduSave helped me get my semester books at a fraction of the cost. As a UoN student, that saved me big time!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Achieng" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Achieng Otieno</h4>
+                            <p>University of Nairobi</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"Found a scholarship on EduSave that I hadn’t seen anywhere else. It covered most of my tuition this year!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Brian" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Brian Kamau</h4>
+                            <p>Kenyatta University</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <p class="testimonial-text">"The gig board matched me with flexible design work around my lectures. I’m earning while I study!"</p>
+                    <div class="testimonial-author">
+                        <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Wanjiru" class="author-avatar">
+                        <div class="author-info">
+                            <h4>Wanjiru Njeri</h4>
+                            <p>Strathmore University</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta">
+        <div class="container">
+            <h2 class="cta-title">Join Thousands of Students Saving Money</h2>
+            <p>Create your free account and start accessing affordable resources today.</p>
+            
+            <div class="cta-buttons">
+                <button class="btn btn-outline">Learn More</button>
+                <button class="btn btn-solid">Sign Up Now</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="section newsletter" id="newsletter">
+        <div class="container">
+            <h2 class="section-title">Stay Updated</h2>
+            <p style="text-align:center;color:var(--grey);margin:-1rem 0 1.5rem">Get new scholarships, gigs, and tips in your inbox.</p>
+            <form id="newsletterForm" class="newsletter-form" novalidate>
+                <input type="email" id="newsletterEmail" placeholder="Enter your email" aria-label="Email address" required>
+                <button type="submit" class="btn btn-solid">Subscribe</button>
+            </form>
+            <p class="newsletter-hint" aria-live="polite"></p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section faq" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq1">What is EduSave and who is it for?</button>
+                    <div id="faq1" class="faq-answer" hidden>
+                        EduSave is a platform for African university students to save money on textbooks, access scholarships, find gigs, and connect with community.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq2">How does the marketplace work?</button>
+                    <div id="faq2" class="faq-answer" hidden>
+                        Students can list, buy, sell, or rent textbooks directly with peers at student-friendly prices.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq3">Is EduSave free to use?</button>
+                    <div id="faq3" class="faq-answer" hidden>
+                        Yes, creating an account and browsing is free. Optional premium features may be added later.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Communities -->
+    <section class="section communities" id="communities">
+        <div class="container">
+            <h2 class="section-title">Communities in Kenya</h2>
+            <div class="communities-grid">
+                <!-- JS will populate university cards here -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3>EduSave</h3>
+                    <p>Empowering African students through shared resources, scholarships, and opportunities.</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com" target="_blank" rel="noopener" aria-label="EduSave on Facebook"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+                        <a href="https://twitter.com" target="_blank" rel="noopener" aria-label="EduSave on X/Twitter"><i class="fab fa-twitter" aria-hidden="true"></i></a>
+                        <a href="https://instagram.com" target="_blank" rel="noopener" aria-label="EduSave on Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
+                        <a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="EduSave on LinkedIn"><i class="fab fa-linkedin-in" aria-hidden="true"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Marketplace</a></li>
+                        <li><a href="#">Scholarships</a></li>
+                        <li><a href="#">Gig Board</a></li>
+                        <li><a href="#">Community</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Resources</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Student Guide</a></li>
+                        <li><a href="#">Scholarship Tips</a></li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope"></i> info@edusave.africa</li>
+                        <li><i class="fas fa-phone"></i> +254 700 123 456</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Nairobi Headquarters, Kenya</li>
+                    </ul>
+                    <form id="contactForm" class="contact-form" novalidate>
+                        <div class="form-row">
+                            <input type="text" id="contactName" name="name" placeholder="Your Name" required aria-label="Your name">
+                            <input type="email" id="contactEmail" name="email" placeholder="Your Email" required aria-label="Your email">
+                        </div>
+                        <textarea id="contactMessage" name="message" placeholder="Your Message" rows="4" required aria-label="Your message"></textarea>
+                        <button type="submit" class="btn btn-solid">Send Message</button>
+                        <p class="contact-hint" aria-live="polite"></p>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="currentYear"></span> EduSave. All rights reserved. Designed for African students.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toasts -->
+    <div class="toast-container" aria-live="polite" aria-atomic="true"></div>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" aria-label="Back to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Cookie banner -->
+    <div class="cookie-banner" role="dialog" aria-live="polite" aria-label="Cookie consent" aria-modal="false">
+        <div class="cookie-content">
+            <p>We use cookies to enhance site navigation and analyze usage. By clicking “Accept”, you agree to our use of cookies. <a href="#" class="cookie-link">Learn more</a></p>
+            <div class="cookie-actions">
+                <button class="btn btn-outline cookie-decline">Decline</button>
+                <button class="btn btn-solid cookie-accept">Accept</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Login to EduSave</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="loginForm" class="auth-form">
+                <div class="form-group">
+                    <label for="loginEmail">Email</label>
+                    <input type="email" id="loginEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="loginPassword" required placeholder="Enter your password">
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="rememberMe">
+                        <span>Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+                <button type="submit" class="btn btn-solid btn-full">Login</button>
+                <div class="social-auth">
+                    <button type="button" class="btn social-btn social-google" aria-label="Continue with Google"><i class="fab fa-google"></i> Continue with Google</button>
+                    <button type="button" class="btn social-btn social-facebook" aria-label="Continue with Facebook"><i class="fab fa-facebook-f"></i> Continue with Facebook</button>
+                </div>
+                <p class="form-footer">
+                    Don't have an account? <a href="#" class="switch-form" data-target="signupModal">Sign up</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Create your EduSave Account</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="signupForm" class="auth-form">
+                <div class="form-group">
+                    <label for="signupName">Full Name</label>
+                    <input type="text" id="signupName" required placeholder="Enter your full name">
+                </div>
+                <div class="form-group">
+                    <label for="signupEmail">Email</label>
+                    <input type="email" id="signupEmail" required placeholder="Enter your email">
+                </div>
+                <div class="form-group">
+                    <label for="signupUniversity">University</label>
+                    <input type="text" id="signupUniversity" required placeholder="Enter your university">
+                </div>
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-input">
+                        <input type="password" id="signupPassword" required placeholder="Create a password">
+                        <button type="button" class="toggle-password">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <div class="strength-meter" aria-live="polite">
+                        <div class="strength-bar"></div>
+                        <span class="strength-text">Strength: -</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="agreeTerms" required>
+                        <span>I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a></span>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-solid btn-full">Create Account</button>
+                <div class="social-auth">
+                    <button type="button" class="btn social-btn social-google" aria-label="Sign up with Google"><i class="fab fa-google"></i> Sign up with Google</button>
+                    <button type="button" class="btn social-btn social-facebook" aria-label="Sign up with Facebook"><i class="fab fa-facebook-f"></i> Sign up with Facebook</button>
+                </div>
+                <p class="form-footer">
+                    Already have an account? <a href="#" class="switch-form" data-target="loginModal">Login</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Reset Password Modal -->
+    <div id="resetModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Reset your password</h2>
+                <button class="modal-close">&times;</button>
+            </div>
+            <form id="resetForm" class="auth-form">
+                <div class="form-group">
+                    <label for="resetEmail">Email</label>
+                    <input type="email" id="resetEmail" required placeholder="Enter your account email">
+                </div>
+                <button type="submit" class="btn btn-solid btn-full">Send reset link</button>
+                <p class="form-footer">Remembered it? <a href="#" class="switch-form" data-target="loginModal">Back to login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="main.js"></script>
+</body>
+</html>
